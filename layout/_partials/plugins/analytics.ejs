@@ -80,4 +80,21 @@
   <% if(theme.web_analytics.leancloud && theme.web_analytics.leancloud.app_id && theme.web_analytics.leancloud.app_key) { %>
     <% import_js(theme.static_prefix.internal_js, 'leancloud.js', 'defer') %>
   <% } %>
+
+  <% if(theme.web_analytics.umami && theme.web_analytics.umami.host && theme.web_analytics.umami.website_id) { %>
+    <!-- Umami Analytics -->
+    <script async>
+      if (!Fluid.ctx.dnt) {
+        var _mtac = {};
+        (function() {
+          var mta = document.createElement("script");
+          mta.src = "//<%= theme.web_analytics.umami.host %>/script.js";
+          mta.setAttribute("data-website-id", "<%= theme.web_analytics.umami.website_id %>");
+          mta.defer = true;
+          var s = document.getElementsByTagName("script")[0];
+          s.parentNode.insertBefore(mta, s);
+        })();
+      }
+    </script>
+  <% } %>
 <% } %>

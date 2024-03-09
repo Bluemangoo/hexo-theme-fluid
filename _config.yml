@@ -311,6 +311,16 @@ web_analytics:  # 网页访问统计
 canonical:
   enable: false
 
+  # Umami 站点统计，需要自行部署 Umami 服务或使用 Umami Cloud，详见 https://umami.is/docs/collecting-data
+  # Umami analytics, you need to deploy Umami service by yourself or use Umami Cloud, see: https://umami.is/docs/collecting-data
+  umami:
+    # Umami 服务域名
+    # Umami service host
+    host: us.umami.is
+    # Umami 服务的站点 ID
+    # Umami site ID
+    website_id:
+
 # 对页面中的图片和评论插件进行懒加载处理，可见范围外的元素不会提前加载
 # Lazy loading of images and comment plugin on the page
 lazyload:
